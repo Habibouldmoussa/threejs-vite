@@ -1,0 +1,22 @@
+{
+  "name": "threejs-vite",
+  "version": "1.0.0",
+  "description": "test threejs 3D user interface and vite bundle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Habibouldmoussa/threejs-vite.git"
+  },
+  "author": "habib ouldmoussa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Habibouldmoussa/threejs-vite/issues"
+  },
+  "homepage": "https://github.com/Habibouldmoussa/threejs-vite#readme",
+  "devDependencies": {
+    "vite": "^5.2.11"
+  }
+}
