@@ -89,8 +89,26 @@ function init() {
   camera.position.set(- 1.8, 0.6, 2.7);
 
   scene = new THREE.Scene();
-  const cube = new THREE.BoxGeometry(1, 1, 1)
-  scene.add(cube)
+  // const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+  // const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+  // const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+  // cube.position.set(0, 5, 0)
+  const video = document.createElement('video');
+  video.src = 'public/prince_of_perssia.mp4';
+  video.load();
+  video.play();
+  const videoTexture = new THREE.VideoTexture(video);
+  videoTexture.minFilter = THREE.LinearFilter;
+  videoTexture.magFilter = THREE.LinearFilter;
+  videoTexture.format = THREE.RGBFormat;
+  const videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture });
+  const videoGeometry = new THREE.PlaneGeometry(16, 9);
+  const videoPlane = new THREE.Mesh(videoGeometry, videoMaterial);
+  videoPlane.scale.set(0.22, 0.4, 0);
+
+  videoPlane.position.set(0.05, 1.9, -0.19); // Remplacez x, y, z par les coordonnées de position souhaitées
+  scene.add(videoPlane);
+  //scene.add(cube);
   new RGBELoader()
     .setPath('public/textures/equirectangular/')
     .load('royal_esplanade_1k.hdr', function (texture) {
